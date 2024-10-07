@@ -14,7 +14,7 @@ int pin_action = 9;
 int pos        = 0;
 int pos_off    = 20;
 int pos_on     = 40;
-int pos_attack = 60;
+int pos_attack = 70;
 
 // button vars
 bool button_action_pressed = false;
