@@ -1,14 +1,16 @@
 #include <Servo.h>
 
 Servo servo_1;
+Servo servo_2;
 
 // loop delay
 int delay_n    = 300;
 
 // arduino pins
-int pin_servo  = 7;
-int pin_off    = 8;
-int pin_action = 9;
+int pin_servo1  = 6;
+int pin_servo2  = 7;
+int pin_off     = 8;
+int pin_action  = 9;
 
 // servo positions
 int pos        = 0;
@@ -32,6 +34,7 @@ void set_pos_off() {
     exit; 
   }
   servo_1.write(pos_off);
+  servo_2.write(pos_off);
   delay(delay_n * 5);
   state = STATE_OFF;
 }
@@ -41,6 +44,7 @@ void set_pos_on() {
     exit; 
   }
   servo_1.write(pos_on);
+  servo_2.write(pos_on);
   delay(delay_n);
   state = STATE_ON;
 }
@@ -50,6 +54,7 @@ void set_pos_attack() {
     exit; 
   }
   servo_1.write(pos_attack);
+  servo_2.write(pos_attack);
   delay(delay_n);
   state = STATE_ATTACK;
 }
@@ -63,7 +68,12 @@ servo_1.writeMicroseconds(1278);  // Moves the servo to approximately 50 degrees
 
 void setup() {
   servo_1.writeMicroseconds(1111);
-  servo_1.attach(pin_servo);
+  servo_2.writeMicroseconds(1111);
+
+  
+  servo_1.attach(pin_servo1);
+  servo_2.attach(pin_servo2);
+  
   delay(delay_n * 2);
   set_pos_off();
   pinMode(pin_action, INPUT);
