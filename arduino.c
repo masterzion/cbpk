@@ -4,7 +4,7 @@ Servo servo_1;
 Servo servo_2;
 
 // loop delay
-int delay_n    = 300;
+int delay_n    = 500;
 
 // arduino pins
 int pin_servo1  = 6;
@@ -35,7 +35,7 @@ void set_pos_off() {
   }
   servo_1.write(pos_off);
   servo_2.write(pos_off);
-  delay(delay_n * 5);
+  delay(delay_n * 3);
   state = STATE_OFF;
 }
 
