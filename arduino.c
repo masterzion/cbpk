@@ -59,13 +59,6 @@ void set_pos_attack() {
   state = STATE_ATTACK;
 }
 
-/*
-servo_1.writeMicroseconds(1111);  // Moves the servo to approximately 20 degrees
-servo_1.writeMicroseconds(1222);  // Moves the servo to approximately 40 degrees
-servo_1.writeMicroseconds(1278);  // Moves the servo to approximately 50 degrees
-*/
-
-
 void setup() {
   servo_1.writeMicroseconds(1111);
   servo_2.writeMicroseconds(1111);
